@@ -21,14 +21,14 @@ jobs:
       - name: build
         run: mkdir build && cd build && cmake .. && make
 
-      - name: static analysis and linters
+      - name: static analysis
         run: ./linters/run.sh build/HW_1 build/gtests && cppcheck -q --enable=all --inconclusive --platform=unix64 --suppress=missingIncludeSystem ./project ./gtests
 
-      - name: tests
+      - name: gtests
         run: ./build/gtests 
         
       - name: valgrind
         run: valgrind --tool=memcheck --leak-check=full -s ./build/gtests
 
-      - name: code coverage
-        run: gcovr -r .
+      - name: test coverage
+        run: gcovr -r ../ -e '..*/gtest/' 
