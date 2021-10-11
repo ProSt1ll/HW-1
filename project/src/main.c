@@ -15,5 +15,4 @@ int main() {
         printf("Введены некорректные данные \n");
     }
     free(week);
-    week = NULL;
 }

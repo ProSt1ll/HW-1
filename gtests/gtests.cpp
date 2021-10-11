@@ -19,7 +19,6 @@ TEST(max_temp, max_temp1) {
     int expected = 2;
     EXPECT_EQ(max_temp(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(max_temp, max_temp2) {
@@ -32,7 +31,6 @@ TEST(max_temp, max_temp2) {
     int expected = -1;
     EXPECT_EQ(max_temp(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(min_temp, min_temp1) {
@@ -45,7 +43,6 @@ TEST(min_temp, min_temp1) {
     int expected = 3;
     EXPECT_EQ(min_temp(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(min_temp, min_temp2) {
@@ -58,7 +55,6 @@ TEST(min_temp, min_temp2) {
     int expected = -1;
     EXPECT_EQ(min_temp(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(summ_fall, summ_fall) {
@@ -71,7 +67,6 @@ TEST(summ_fall, summ_fall) {
     int expected = -1;
     EXPECT_EQ(sum_fall(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(summ_fall, summ_fall2) {
@@ -84,7 +79,6 @@ TEST(summ_fall, summ_fall2) {
     int expected = 180;
     EXPECT_EQ(sum_fall(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(mean_temp, mean_temp) {
@@ -97,7 +91,6 @@ TEST(mean_temp, mean_temp) {
     int expected = 60 / 4;
     EXPECT_FLOAT_EQ(mean_temp(week, 4), expected);
     free(week);
-    week = NULL;
 }
 
 TEST(checkout_weather_value, checkout_weather_value) {
@@ -105,7 +98,6 @@ TEST(checkout_weather_value, checkout_weather_value) {
     input_weather_rand(week, 4);
     EXPECT_TRUE(checkout_weather_value(week, 4));
     free(week);
-    week = NULL;
 }
 
 TEST(checkout_weather_ptr, checkout_weather_ptr) {
@@ -113,14 +105,12 @@ TEST(checkout_weather_ptr, checkout_weather_ptr) {
     input_weather_rand(week, 4);
     EXPECT_TRUE(checkout_weather_ptr(week, 4));
     free(week);
-    week = NULL;
 }
 
 TEST(checkout_weather_ptr, checkout_weather_ptr2) {
     struct weather *week = 0;
     EXPECT_FALSE(checkout_weather_ptr(week, 4));
     free(week);
-    week = NULL;
 }
 
 
