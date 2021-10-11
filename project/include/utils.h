@@ -7,7 +7,7 @@ extern "C" {
 #endif
 
 
-#define NED 3
+#define NED 7
 struct weather {
     int temperature;
     int fallout;

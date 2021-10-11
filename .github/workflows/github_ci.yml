@@ -6,7 +6,7 @@ on:
   pull_request:
     branches:
      - HW1
-     - master
+     - main
   
 jobs:
   build:
