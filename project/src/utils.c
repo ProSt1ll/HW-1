@@ -81,7 +81,7 @@ float mean_temp(struct weather *week, int num) {
         sum += week[i].temperature;
     }
     if (sum == 0) return 0;
-    float mean = (float) sum / num;
+    float mean = (float)sum / num;
     return mean;
 }
 
@@ -93,9 +93,12 @@ int checkout_weather_ptr(struct weather *week, int num) {
 
 int checkout_weather_value(struct weather *week, int num) {
     for (int i = 0; i < num; i++) {
-        if (((week[i].wind_velocity) > MAX_WIND) || ((week[i].wind_velocity) < MIN_WIND) ||
-            ((week[i].temperature) > MAX_TEMP) || ((week[i].temperature) < MIN_TEMP) ||
-            ((week[i].fallout) > MAX_FALL) || ((week[i].fallout) < MIN_FALL))
+        if (((week[i].wind_velocity) > MAX_WIND) ||
+            ((week[i].wind_velocity) < MIN_WIND) ||
+            ((week[i].temperature) > MAX_TEMP) ||
+            ((week[i].temperature) < MIN_TEMP) ||
+            ((week[i].fallout) > MAX_FALL) ||
+            ((week[i].fallout) < MIN_FALL))
             return 0;
     }
     return 1;
